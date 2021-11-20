@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="{{ asset('admin-lte/plugins/fontawesome-free/css/all.min.css') }} ">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('admin-lte/dist/css/adminlte.min.css') }}">
+  @yield('css')
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -29,5 +30,6 @@
     <script src="{{ asset('admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('admin-lte/dist/js/adminlte.min.js') }}"></script>
+    @yield('js')
 </body>
 </html>
