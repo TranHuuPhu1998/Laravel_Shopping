@@ -10,7 +10,7 @@ class AdminController extends Controller
     {
         if(auth()->check())
         {
-            return redirect()->route('home');
+            return redirect()->to('home');
         }
         return view('login');
     }

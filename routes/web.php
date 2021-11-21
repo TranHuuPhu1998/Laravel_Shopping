@@ -81,10 +81,10 @@ Route::prefix('admin')->group(function () {
             'as' => 'product.create', // name router
             'uses' => 'AdminProductController@create',
         ]);
-        // Route::post('/store', [
-        //     'as' => 'menus.store', // name router
-        //     'uses' => 'MenuController@store',
-        // ]);
+        Route::post('/store', [
+            'as' => 'product.store', // name router
+            'uses' => 'AdminProductController@store',
+        ]);
         // Route::get('/edit/{id}', [
         //     'as' => 'menus.edit', // name router
         //     'uses' => 'MenuController@edit',
