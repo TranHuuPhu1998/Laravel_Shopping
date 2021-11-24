@@ -84,6 +84,8 @@ php artisan config:clear
 Khóa học laravel xây dựng web bán hàng thực tế - Phần 26: Sửa Lỗi Tinymce => done
 Khóa học laravel xây dựng web bán hàng thực tế - Phần 28: Tạo Lớp Trait Sử Dụng Cho Upload File => done
 Khóa học laravel xây dựng web bán hàng thực tế - Phần 30: Thêm Sản Phẩm => done
+Khóa học laravel xây dựng web bán hàng thực tế - Phần 34: Giải Thích Mối Quan Hệ Relationship => done
+Khóa học laravel xây dựng web bán hàng thực tế - Phần 38: Validate Sản Phẩm
 
 // tao modal and migrate
 php artisan make:model Category -m
