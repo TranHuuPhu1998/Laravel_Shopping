@@ -26,8 +26,8 @@ class ProductAddRequest extends FormRequest
         return [
             'name' => 'bail|required|unique:products|min:10|max:255',
             'price' => 'required',
-            'category_id' => 'required',
-            'content' => 'required|min:10|max:255',
+            'category_id' => 'required|min:1',
+            'contents' => 'required|min:10|max:255',
         ];
     }
 
@@ -39,7 +39,7 @@ class ProductAddRequest extends FormRequest
             'name.min' => 'Tên không được dưới 10 ký tự',
             'name.max' => 'Tên không được quá 255 ký tự',
             'category_id.required' => 'Danh mục không được phép bỏ trống',
-            'content.required' => 'Nội dung không được phép bỏ trống',
+            'contents.required' => 'Nội dung không được phép bỏ trống',
             'price.required' => 'Giá không được phép bỏ trống',
         ];
     }

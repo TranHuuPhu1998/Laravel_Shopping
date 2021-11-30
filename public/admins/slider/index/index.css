@@ -1,0 +1,12 @@
+.image_slider {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.image_slider_edit {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    padding: 20px;
+}
