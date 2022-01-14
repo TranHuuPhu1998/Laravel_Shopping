@@ -6,11 +6,13 @@ use App\Http\Requests\SliderAddRequest;
 use Illuminate\Http\Request;
 use App\Slider;
 use App\Traits\StorageImageTrait;
+use App\Traits\DeleteModelTrait;
 use Illuminate\Support\Facades\Log;
 
 class SliderAdminController extends Controller
 {
     use StorageImageTrait;
+    use DeleteModelTrait;
     private $slider;
 
     public function __construct(Slider $slider)
@@ -21,12 +23,12 @@ class SliderAdminController extends Controller
     public function index()
     {
         $sliders = $this->slider->paginate(10);
-        return view('slider.index', compact('sliders'));
+        return view('admin.slider.index', compact('sliders'));
     }
 
     public function create()
     {
-        return view('slider.add');
+        return view('admin.slider.add');
     }
 
     public function store(SliderAddRequest $request){
@@ -52,7 +54,7 @@ class SliderAdminController extends Controller
     public function edit($id){
         $slider = $this->slider->find($id);
 
-        return view('slider.edit',compact('slider'));
+        return view('admin.slider.edit',compact('slider'));
     }
 
     public function update(Request $request, $id){
@@ -77,13 +79,6 @@ class SliderAdminController extends Controller
     }
 
     public function delete($id){
-        try {
-            $this->slider->find($id)->delete();
-            return response()->json(['code' => 200 , 'message' => 'Delete success']);
-        }
-        catch (\Throwable $th) {
-            Log::error($th->getMessage());
-            return response()->json(['code' => 500 , 'message' => 'Delete fail']);
-        }
+        return $this->deleteModelTrait($id ,$this->slider);
     }
 }

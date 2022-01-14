@@ -10,6 +10,7 @@ use App\Tag;
 use App\ProductTag;
 use App\Components\Recursive;
 use App\Traits\StorageImageTrait;
+use App\Traits\DeleteModelTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Http\Requests\ProductAddRequest;
@@ -19,7 +20,7 @@ use Storage;
 class AdminProductController extends Controller
 {
     use StorageImageTrait;
-
+    use DeleteModelTrait;
     private $category;
     private $product;
     private $productImage;
@@ -57,6 +58,7 @@ class AdminProductController extends Controller
 
     public function store(ProductAddRequest $request)
     {
+
         try {
             DB::beginTransaction();
 
@@ -72,6 +74,7 @@ class AdminProductController extends Controller
                 $dataProductCreate['feature_image_name'] = $dataUploadFeatureImage['file_name'];
                 $dataProductCreate['feature_image_path'] = $dataUploadFeatureImage['file_path'];
             }
+
             $product = $this->product->create($dataProductCreate);
             // Insert data to table product_image
             if (!empty($request->hasFile('image_path'))) {
@@ -99,13 +102,14 @@ class AdminProductController extends Controller
                     // ]);
                     $tagTds[] = $tagInstance->id;
                 }
-            }
 
+            }
             if ($tagTds) {
                 // check tag already exist in product_tag then remove tag
                 // kiểm tra tag đã tồn tại trong product_tag thì xóa tag
                 $product->tags()->attach($tagTds);
             }
+
             DB::commit();
             return redirect()->route('product.index');
         } catch (\Exception $e) {
@@ -190,24 +194,6 @@ class AdminProductController extends Controller
 
     public function delete($id)
     {
-        try {
-            $this->product->find($id)->delete();
-            return response()->json(
-                [
-                    'code' => 200,
-                    'message' => 'success',
-                ],
-                200,
-            );
-        } catch (\Exception $e) {
-            Log::error('msg: ' . $e->getMessage() . 'Line: ' . $e->getLine());
-            return response()->json(
-                [
-                    'code' => 500,
-                    'message' => 'fail',
-                ],
-                500,
-            );
-        }
+        return $this->deleteModelTrait($id ,$this->product);
     }
 }

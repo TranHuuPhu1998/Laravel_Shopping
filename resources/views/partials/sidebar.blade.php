@@ -45,7 +45,7 @@
             <a href=" {{ route('categories.index') }} " class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Danh Muc san pham
+                Danh mục category
                 <span class="right badge badge-danger">New</span>
               </p>
             </a>
@@ -73,6 +73,14 @@
               <i class="nav-icon fas fa-th"></i>
               <p>
                Slider
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href=" {{ route('settings.index') }} " class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+               Settings
               </p>
             </a>
           </li>

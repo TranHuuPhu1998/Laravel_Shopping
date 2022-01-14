@@ -124,6 +124,31 @@ Route::prefix('admin')->group(function () {
             'uses' => 'SliderAdminController@delete',
         ]);
     });
-
+    Route::prefix('settings')->group(function () {
+        Route::get('/', [
+            'as' => 'settings.index', // name router
+            'uses' => 'AdminSettingController@index',
+        ]);
+        Route::get('/create', [
+            'as' => 'settings.create', // name router
+            'uses' => 'AdminSettingController@create',
+        ]);
+        Route::post('/store', [
+            'as' => 'settings.store', // name router
+            'uses' => 'AdminSettingController@store',
+        ]);
+        Route::get('/edit/{id}', [
+            'as' => 'settings.edit', // name router
+            'uses' => 'AdminSettingController@edit',
+        ]);
+        Route::post('/update/{id}', [
+            'as' => 'settings.update', // name router
+            'uses' => 'AdminSettingController@update',
+        ]);
+        Route::get('/delete/{id}', [
+            'as' => 'settings.delete', // name router
+            'uses' => 'AdminSettingController@delete',
+        ]);
+    });
 
 });

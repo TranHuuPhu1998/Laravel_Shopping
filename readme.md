@@ -78,15 +78,17 @@ php artisan config:clear
 
 ## progress
 
-// Khóa học laravel xây dựng web bán hàng thực tế - Phần 9: Danh Sách Danh Mục Sản Phẩm => done
-// Khóa học laravel xây dựng web bán hàng thực tế - Phần 10: Cập Nhật Danh Mục Sản Phẩm => done
-// Khóa học laravel xây dựng web bán hàng thực tế - Phần 17: Hiển Thị Form Cập Nhật Menu => done
+Khóa học laravel xây dựng web bán hàng thực tế - Phần 9: Danh Sách Danh Mục Sản Phẩm => done
+Khóa học laravel xây dựng web bán hàng thực tế - Phần 10: Cập Nhật Danh Mục Sản Phẩm => done
+Khóa học laravel xây dựng web bán hàng thực tế - Phần 17: Hiển Thị Form Cập Nhật Menu => done
 Khóa học laravel xây dựng web bán hàng thực tế - Phần 26: Sửa Lỗi Tinymce => done
 Khóa học laravel xây dựng web bán hàng thực tế - Phần 28: Tạo Lớp Trait Sử Dụng Cho Upload File => done
 Khóa học laravel xây dựng web bán hàng thực tế - Phần 30: Thêm Sản Phẩm => done
 Khóa học laravel xây dựng web bán hàng thực tế - Phần 34: Giải Thích Mối Quan Hệ Relationship => done
 Khóa học laravel xây dựng web bán hàng thực tế - Phần 38: Validate Sản Phẩm => done
 Khóa học laravel xây dựng web bán hàng thực tế - Phần 46: Cập Nhật Slider => done
+Khóa học laravel xây dựng web bán hàng thực tế - Phần 53: Hiển Thị Form Cập Nhật Setting => done
+Khóa học laravel xây dựng web bán hàng thực tế - Phần 55: Xóa Setting
 
 // tao modal and migrate
 php artisan make:model Category -m
